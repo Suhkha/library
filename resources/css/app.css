@@ -1,5 +1,67 @@
 @tailwind base;
 
+  /*Form fields*/
+  .dataTables_wrapper select,
+  .dataTables_wrapper .dataTables_filter input {
+    color: #4a5568 !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-top: .5rem !important;
+    padding-bottom: .5rem !important;
+    line-height: 1.25 !important;
+    border-width: 2px !important;
+    border-radius: 0 !important; 		
+    border-color: #edf2f7 !important;
+    background-color: #edf2f7 !important;
+  }
+
+  table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
+    background-color: #ebf4ff !important;
+  }
+  
+  .dataTables_wrapper .dataTables_paginate .paginate_button		{
+    font-weight: 700 !important;
+    border-radius: 0 !important;
+    border: 1px solid transparent !important;
+  }
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover		{
+    font-weight: 700 !important;
+    border-radius: 0 !important;
+    border: 1px solid transparent !important;
+    color: white !important;
+  }
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+  .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+  .dataTables_wrapper .dataTables_paginate .paginate_button:hover		{
+    color: #fff !important;
+    font-weight: 700 !important;
+    border-radius: 0 !important;
+    background: #667eea !important;
+    border: 1px solid transparent !important;
+    margin-bottom: 16px !important;
+  }
+  
+  table.dataTable.no-footer {
+    border-bottom: 1px solid #e2e8f0 !important;
+    margin-top: 0.75em !important;
+    margin-bottom: 0.75em !important;
+  }
+  
+  table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
+    background-color: #667eea !important;
+  }
+
+  .dataTables_info {
+    padding-left: 10px !important;
+  }
+
+  table.dataTable tbody tr {
+    background-color: transparent !important;
+    height: 50px !important;
+  }
+
 @tailwind components;
 
 @tailwind utilities;
