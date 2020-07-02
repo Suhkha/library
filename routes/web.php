@@ -18,5 +18,12 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
+Route::group(['prefix' => 'panel'], function () {
+  Route::get('/home', 'HomeController@index')->name('home');
+
+  Route::prefix('users')->group(function () {
+    Route::get('/', 'UserController@index')->name('panel.users.index');
+  });
+
+});

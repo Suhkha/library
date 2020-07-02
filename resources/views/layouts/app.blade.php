@@ -10,10 +10,20 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <script 
+    src="https://code.jquery.com/jquery-3.5.1.slim.js"
+    integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM="
+    crossorigin="anonymous"></script>
+    <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
+    <script>
+      $(document).ready( function () { $('#table').DataTable();} );
+    </script>
     <!-- Styles -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none">
     <div id="app">
@@ -24,6 +34,17 @@
                         <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
                             {{ config('app.name', 'Laravel') }}
                         </a>
+                        <div class="text-sm inline-block ml-4">
+                          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
+                            Users
+                          </a>
+                          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
+                            Categories
+                          </a>
+                          <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
+                            Books
+                          </a>
+                        </div>
                     </div>
                     <div class="flex-1 text-right">
                         @guest
