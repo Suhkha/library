@@ -26,4 +26,13 @@ Route::group(['prefix' => 'panel'], function () {
     Route::get('/', 'UserController@index')->name('panel.users.index');
   });
 
+  Route::prefix('categories')->group(function () {
+    Route::get('/', 'CategoryController@index')->name('panel.categories.index');
+    Route::get('/new', 'CategoryController@create')->name('panel.categories.new');
+    Route::post('/save', 'CategoryController@store');
+    Route::get('/edit', 'CategoryController@edit')->name('panel.categories.edit');
+    Route::post('/update', 'CategoryController@update');
+    Route::get('/delete', 'CategoryController@delete');
+  });
+
 });

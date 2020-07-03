@@ -38,7 +38,7 @@
     color: #fff !important;
     font-weight: 700 !important;
     border-radius: 0 !important;
-    background: #667eea !important;
+    background: #2a4365 !important;
     border: 1px solid transparent !important;
     margin-bottom: 16px !important;
   }
@@ -50,7 +50,7 @@
   }
   
   table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
-    background-color: #667eea !important;
+    background-color: #2a4365 !important;
   }
 
   .dataTables_info {
@@ -62,6 +62,17 @@
     height: 50px !important;
   }
 
+  table.dataTable thead .sorting, 
+  table.dataTable thead .sorting_asc, 
+  table.dataTable thead .sorting_desc {
+      background : none !important;
+  }
+
+  .parsley-errors-list {
+    color: #c53030 !important;
+    font-weight: bold !important;
+    margin-top: 8px !important;
+  }
 @tailwind components;
 
 @tailwind utilities;
