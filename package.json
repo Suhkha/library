@@ -30,6 +30,7 @@
         "datatables.net-dt": "^1.10.21",
         "jquery": "^3.5.1",
         "parsley": "^0.1.0",
-        "parsleyjs": "^2.9.2"
+        "parsleyjs": "^2.9.2",
+        "sweetalert2": "^9.15.2"
     }
 }

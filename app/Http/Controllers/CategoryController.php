@@ -35,21 +35,42 @@ class CategoryController extends Controller
 
     return redirect()
       ->route('panel.categories.index')
-      ->with("status", "Category added successfully");
+      ->with("success", "Category added successfully");
   }
 
   public function edit($id)
   {
-
+    $category = Category::find($id);
+    return view('panel.categories.edit')
+          ->with('category', $category);
   }
 
   public function update($id)
   {
+    $this->validate(request(), [
+      'name' => 'required|string',
+      'description' => 'required|string',
+      'status' => 'boolean'          
+    ]);
 
+    $category               = Category::find($id);
+    $category->name         = request('name');
+    $category->description  = request('description');
+    $category->status       = is_null(request('status')) ? 0 : 1;
+    $category->save();
+
+    return redirect()
+      ->route('panel.categories.index')
+      ->with("success", "Category edited successfully");
   }
 
   public function delete($id)
   {
+    $category = Category::find($id);
+    $category->delete();
 
+    return redirect()
+      ->route('panel.categories.index')
+      ->with("error", "Category deleted successfully");
   }
 }

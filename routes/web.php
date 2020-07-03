@@ -29,10 +29,10 @@ Route::group(['prefix' => 'panel'], function () {
   Route::prefix('categories')->group(function () {
     Route::get('/', 'CategoryController@index')->name('panel.categories.index');
     Route::get('/new', 'CategoryController@create')->name('panel.categories.new');
-    Route::post('/save', 'CategoryController@store');
-    Route::get('/edit', 'CategoryController@edit')->name('panel.categories.edit');
-    Route::post('/update', 'CategoryController@update');
-    Route::get('/delete', 'CategoryController@delete');
+    Route::post('/save', 'CategoryController@store')->name('panel.categories.store');
+    Route::get('/edit/{id}', 'CategoryController@edit')->name('panel.categories.edit');
+    Route::post('/update/{id}', 'CategoryController@update')->name('panel.categories.update');
+    Route::get('/delete/{id}', 'CategoryController@delete')->name('panel.categories.delete');
   });
 
 });

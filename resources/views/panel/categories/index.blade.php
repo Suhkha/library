@@ -4,10 +4,16 @@
     <div class="flex items-center">
         <div class="md:w-3/4 md:mx-auto">
 
-            @if (session('status'))
-                <div class="text-sm border border-t-8 rounded text-green-700 border-green-600 bg-green-100 px-3 py-4 mb-4" role="alert">
-                    {{ session('status') }} Lorem ipsum dolor sit amet consectetur, adipisicing elit. In quae tempora minus tenetur deleniti quis totam, cumque officiis inventore facere ipsum. Ipsa ducimus porro optio excepturi cumque. Ex, laboriosam aliquam?  
-                </div>
+            @if (session('success'))
+              <div class="text-sm border text-green-700 border-green-600 bg-green-100 px-3 py-4 mb-4" role="alert">
+                {{ session('success') }}
+              </div>
+            @endif
+
+            @if (session('error'))
+              <div class="text-sm border text-red-700 border-red-600 bg-red-100 px-3 py-4 mb-4" role="alert">
+                {{ session('error') }}
+              </div>
             @endif
 
             <div class="flex flex-col">
@@ -39,8 +45,8 @@
                           </td>
                           <td>
                             <div class="px-6 py-4">
-                              <a href="{{ url('panel/categories/edit/'.$category->id.'') }}" class="inline-block cursor-pointer bg-blue-800 px-3 py-1 text-sm font-semibold text-white mr-2 ">Editar</a>
-                              <a href="{{ url('panel/categories/delete/'.$category->id.'') }}" class="inline-block cursor-pointer bg-red-700 px-3 py-1 text-sm font-semibold text-white mr-2">Eliminar</a>
+                              <a href="{{ url('panel/categories/edit/'.$category->id.'') }}" class="block cursor-pointer bg-blue-900 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-blue-800 ">Editar</a>
+                              <a delete-data="{{ url('panel/categories/delete/'.$category->id.'') }}" class="block cursor-pointer bg-red-700 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-red-600 delete_record">Eliminar</a>
                             </div>
                           </td>
                         </tr>

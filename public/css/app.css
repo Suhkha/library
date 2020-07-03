@@ -651,7 +651,6 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before, table.dataT
 
 table.dataTable tbody tr {
   background-color: transparent !important;
-  height: 50px !important;
 }
 
 table.dataTable thead .sorting, 

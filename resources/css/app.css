@@ -59,7 +59,6 @@
 
   table.dataTable tbody tr {
     background-color: transparent !important;
-    height: 50px !important;
   }
 
   table.dataTable thead .sorting, 
