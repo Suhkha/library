@@ -3,13 +3,6 @@
 @section('content')
     <div class="flex items-center">
         <div class="md:w-3/4 md:mx-auto">
-
-            @if (session('status'))
-                <div class="text-sm border border-t-8 rounded text-green-700 border-green-600 bg-green-100 px-3 py-4 mb-4" role="alert">
-                    {{ session('status') }}lorem  
-                </div>
-            @endif
-
             <div class="flex flex-col">
               <div class="font-semibold bg-blue-900 text-white py-3 px-6 mb-8">
                 <span class="block lg:inline-block py-2 px-2">New category</span>
@@ -29,15 +22,15 @@
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-6">
                       <div class="w-full px-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-description">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="description">
                           Description of category
                         </label>
-                        <textarea required class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-description" type="text" placeholder="" name="description">{{ $category->description }}</textarea>
+                        <textarea required class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="description" type="text" placeholder="" name="description">{{ $category->description }}</textarea>
                       </div>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-6">
                       <div class="w-full px-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-description">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="status">
                           Is it an active category?
                         </label>
                         <div class="mt-2">

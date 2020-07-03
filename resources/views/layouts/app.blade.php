@@ -34,6 +34,9 @@
                           <a href="{{ url('panel/categories') }}" class="mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
                             Categories
                           </a>
+                          <a href="{{ url('panel/authors') }}" class="mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
+                            Authors
+                          </a>
                           <a href="{{ url('panel/books') }}" class="mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4">
                             Books
                           </a>
