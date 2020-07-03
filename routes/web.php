@@ -36,4 +36,13 @@ Route::group(['middleware' => 'auth', 'prefix' => 'panel'], function () {
     Route::get('/delete/{id}', 'CategoryController@delete')->name('panel.categories.delete');
   });
 
+  Route::prefix('authors')->group(function () {
+    Route::get('/', 'AuthorController@index')->name('panel.authors.index');
+    Route::get('/new', 'AuthorController@create')->name('panel.authors.new');
+    Route::post('/save', 'AuthorController@store')->name('panel.authors.store');
+    Route::get('/edit/{id}', 'AuthorController@edit')->name('panel.authors.edit');
+    Route::post('/update/{id}', 'AuthorController@update')->name('panel.authors.update');
+    Route::get('/delete/{id}', 'AuthorController@delete')->name('panel.authors.delete');
+  });
+
 });
