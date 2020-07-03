@@ -11,7 +11,7 @@ class CategoryController extends Controller
   {
     $categories = Category::all();
     return view('panel.categories.index')
-          ->with('categories', $categories);
+      ->with('categories', $categories);
   }
 
   public function create()
@@ -42,7 +42,7 @@ class CategoryController extends Controller
   {
     $category = Category::find($id);
     return view('panel.categories.edit')
-          ->with('category', $category);
+      ->with('category', $category);
   }
 
   public function update($id)
