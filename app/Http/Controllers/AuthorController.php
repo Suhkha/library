@@ -19,7 +19,7 @@ class AuthorController extends Controller
     return view('panel.authors.new');
   }
 
-  public function store(Request $request)
+  public function store()
   {
     $this->validate(request(), [
       'name' => 'required|string',

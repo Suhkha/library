@@ -19,7 +19,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
 Route::group(['middleware' => 'auth', 'prefix' => 'panel'], function () {
   Route::get('/home', 'HomeController@index')->name('home');
 
@@ -43,6 +42,15 @@ Route::group(['middleware' => 'auth', 'prefix' => 'panel'], function () {
     Route::get('/edit/{id}', 'AuthorController@edit')->name('panel.authors.edit');
     Route::post('/update/{id}', 'AuthorController@update')->name('panel.authors.update');
     Route::get('/delete/{id}', 'AuthorController@delete')->name('panel.authors.delete');
+  });
+
+  Route::prefix('books')->group(function () {
+    Route::get('/', 'BookController@index')->name('panel.books.index');
+    Route::get('/new', 'BookController@create')->name('panel.books.new');
+    Route::post('/save', 'BookController@store')->name('panel.books.store');
+    Route::get('/edit/{id}', 'BookController@edit')->name('panel.books.edit');
+    Route::post('/update/{id}', 'BookController@update')->name('panel.books.update');
+    Route::get('/delete/{id}', 'BookController@delete')->name('panel.books.delete');
   });
 
 });
