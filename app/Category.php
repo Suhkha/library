@@ -9,4 +9,11 @@ class Category extends Model
   protected $fillable = [
     'name', 'description', 'status',
   ];
+
+  public static function available_categories() {
+    $categories = Category::where('status', '=', 1)
+      ->get();
+
+    return $categories;
+  }
 }

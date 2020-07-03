@@ -19,7 +19,7 @@ class CategoryController extends Controller
     return view('panel.categories.new');
   }
 
-  public function store(Request $request)
+  public function store()
   {
     $this->validate(request(), [
       'name' => 'required|string',
