@@ -72,6 +72,10 @@
     font-weight: bold !important;
     margin-top: 8px !important;
   }
+
+  .active{
+    display: block;
+  }
 @tailwind components;
 
 @tailwind utilities;

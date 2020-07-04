@@ -665,6 +665,10 @@ table.dataTable thead .sorting,
   margin-top: 8px !important;
 }
 
+.active{
+  display: block;
+}
+
 .container {
   width: 100%;
 }

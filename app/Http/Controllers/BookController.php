@@ -17,6 +17,26 @@ class BookController extends Controller
       ->with('books', $books);
   }
 
+  public function available()
+  {
+    $books = Book::where('status', 1)
+      ->with(['category', 'author'])
+      ->get();
+
+    return view('panel.books.available')
+      ->with('books', $books);
+  }
+
+  public function borrowed()
+  {
+    $books = Book::where('status', 0)
+      ->with(['category', 'author', 'user'])
+      ->get();
+      
+    return view('panel.books.borrowed')
+      ->with('books', $books);
+  }
+
   public function create()
   {
     $available_categories = Category::available_categories();

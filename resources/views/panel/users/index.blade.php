@@ -18,6 +18,7 @@
                     <thead>
                       <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Name</th>
                       <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                      <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Book assigned</th>
                       <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Options</th>
                     </thead>
                     <tbody class="bg-gray-200">
@@ -35,7 +36,20 @@
                           </td>
                           <td>
                             <span class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-gray-800">
-                              View
+                              @if(isset($user->book))
+                                {{$user->book->name}}
+                              @else
+                                -
+                              @endif
+                            </span>
+                          </td>
+                          <td>
+                            <span class="px-6 py-4">
+                              @if(isset($user->book))
+                                <a update-data="{{ url('panel/borrowed/status/'.$user->book->id.'/1') }}" class="update_record block cursor-pointer bg-green-900 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-green-800 ">Set available book</a>
+                              @else
+                                -
+                              @endif
                             </span>
                           </td>
                         </tr>
