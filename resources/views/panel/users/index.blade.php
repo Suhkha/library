@@ -46,7 +46,7 @@
                           <td>
                             <span class="px-6 py-4">
                               @if(isset($user->book))
-                                <a update-data="{{ url('panel/borrowed/status/'.$user->book->id.'/1') }}" class="update_record block cursor-pointer bg-green-900 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-green-800 ">Set available book</a>
+                                <a update-data="{{ url('panel/borrowed/status/'.$user->book->id.'/1') }}" class="update_record block cursor-pointer bg-green-900 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-green-800 ">Available book</a>
                               @else
                                 -
                               @endif

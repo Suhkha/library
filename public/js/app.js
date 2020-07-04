@@ -53391,7 +53391,7 @@ $(document).ready(function () {
       showCancelButton: true,
       confirmButtonColor: '#22543d',
       cancelButtonText: 'Cancel',
-      confirmButtonText: 'SET AVAILABLE'
+      confirmButtonText: 'AVAILABLE'
     }).then(function (result) {
       if (result.value) {
         location.href = urlUpdateStatus;

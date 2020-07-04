@@ -71,7 +71,7 @@
                           </td>
                           <td>
                             <div class="px-6 py-4">
-                              <a update-data="{{ url('panel/borrowed/status/'.$book->id.'/1') }}" class="update_record block cursor-pointer bg-green-900 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-green-800 ">Set available</a>
+                              <a update-data="{{ url('panel/borrowed/status/'.$book->id.'/1') }}" class="update_record block cursor-pointer bg-green-900 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-green-800 ">Available</a>
                               <a href="{{ url('panel/books/edit/'.$book->id.'') }}" class="block cursor-pointer bg-blue-900 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-blue-800 ">Edit</a>
                               <a delete-data="{{ url('panel/books/delete/'.$book->id.'') }}" class="block cursor-pointer bg-red-700 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-red-600 delete_record">Delete</a>
                             </div>
