@@ -10,6 +10,11 @@ use Carbon\Carbon;
 
 class BookController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
+  
   public function index()
   {
     $books = Book::with(['category', 'author'])->get();

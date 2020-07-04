@@ -8,6 +8,11 @@ use App\User;
 
 class BorrowController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('auth');
+  }
+  
   public function status($id, $status) 
   {
     $book           = Book::find($id);

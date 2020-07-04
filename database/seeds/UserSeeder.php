@@ -20,10 +20,18 @@ class UserSeeder extends Seeder
         $user = new User();
         $user->name = $faker->name;
         $user->email = $faker->safeEmail;
-        $user->type = $faker->numberBetween($min = 0, $max = 1);
+        $user->type = $faker->numberBetween($min = 0);
         $user->password = crypt("iwantmybook", "");
 
         $user->save();
       }
+
+      $user = new User();
+      $user->name = "Maniak";
+      $user->email = "admin@maniak.co";
+      $user->type = 1;
+      $user->password = crypt("iwantmybook", "");
+      $user->save();
+
     }
 }
