@@ -53305,46 +53305,7 @@ var buttons = __webpack_require__(/*! datatables.net-buttons */ "./node_modules/
 
 var Swal = __webpack_require__(/*! sweetalert2 */ "./node_modules/sweetalert2/dist/sweetalert2.all.js");
 
-$(document).ready(function () {
-  $('#table').DataTable();
-  $('#validate_form').parsley();
-  $('.delete_record').on('click', onClickDeleteRecord);
-  $('.update_record').on('click', onClickUpdateStatus);
-
-  function onClickDeleteRecord() {
-    var urlDelete = this.getAttribute('delete-data');
-    Swal.fire({
-      title: "<span class='text-3xl'>Do you want delete this record?</span>",
-      text: "It will be removed from the database. Changes cannot be undone.",
-      icon: 'error',
-      showCancelButton: true,
-      confirmButtonColor: '#c53030',
-      cancelButtonText: 'Cancel',
-      confirmButtonText: 'DELETE'
-    }).then(function (result) {
-      if (result.value) {
-        location.href = urlDelete;
-      }
-    });
-  }
-
-  function onClickUpdateStatus() {
-    var urlUpdateStatus = this.getAttribute('update-data');
-    Swal.fire({
-      title: "<span class='text-3xl'>Do you want update this status?</span>",
-      text: "The book to update will be available again to be requested.",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#22543d',
-      cancelButtonText: 'Cancel',
-      confirmButtonText: 'SET AVAILABLE'
-    }).then(function (result) {
-      if (result.value) {
-        location.href = urlUpdateStatus;
-      }
-    });
-  }
-});
+__webpack_require__(/*! ./main */ "./resources/js/main.js");
 
 /***/ }),
 
@@ -53388,6 +53349,56 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/main.js":
+/*!******************************!*\
+  !*** ./resources/js/main.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+  $('#table').DataTable();
+  $('#validate_form').parsley();
+  $('.delete_record').on('click', onClickDeleteRecord);
+  $('.update_record').on('click', onClickUpdateStatus);
+
+  function onClickDeleteRecord() {
+    var urlDelete = this.getAttribute('delete-data');
+    Swal.fire({
+      title: "<span class='text-3xl'>Do you want delete this record?</span>",
+      text: "It will be removed from the database. Changes cannot be undone.",
+      icon: 'error',
+      showCancelButton: true,
+      confirmButtonColor: '#c53030',
+      cancelButtonText: 'Cancel',
+      confirmButtonText: 'DELETE'
+    }).then(function (result) {
+      if (result.value) {
+        location.href = urlDelete;
+      }
+    });
+  }
+
+  function onClickUpdateStatus() {
+    var urlUpdateStatus = this.getAttribute('update-data');
+    Swal.fire({
+      title: "<span class='text-3xl'>Do you want update this status?</span>",
+      text: "The book to update will be available again to be requested.",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#22543d',
+      cancelButtonText: 'Cancel',
+      confirmButtonText: 'SET AVAILABLE'
+    }).then(function (result) {
+      if (result.value) {
+        location.href = urlUpdateStatus;
+      }
+    });
+  }
+});
 
 /***/ }),
 
