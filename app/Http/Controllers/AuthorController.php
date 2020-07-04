@@ -33,7 +33,7 @@ class AuthorController extends Controller
 
     return redirect()
       ->route('panel.authors.index')
-      ->with("success", "Author added successfully");
+      ->with("success", "Author ".$author->name." added successfully");
   }
 
   public function edit($id)
@@ -57,7 +57,7 @@ class AuthorController extends Controller
 
     return redirect()
       ->route('panel.authors.index')
-      ->with("success", "Author edited successfully");
+      ->with("success", "Author".$author->name." edited successfully");
   }
 
   public function delete($id)

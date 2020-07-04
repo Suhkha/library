@@ -46,11 +46,21 @@ Route::group(['middleware' => 'auth', 'prefix' => 'panel'], function () {
 
   Route::prefix('books')->group(function () {
     Route::get('/', 'BookController@index')->name('panel.books.index');
+    Route::get('/available', 'BookController@available')->name('panel.books.available');
+    Route::get('/borrowed', 'BookController@borrowed')->name('panel.books.borrowed');
+    Route::get('/', 'BookController@index')->name('panel.books.index');
     Route::get('/new', 'BookController@create')->name('panel.books.new');
     Route::post('/save', 'BookController@store')->name('panel.books.store');
     Route::get('/edit/{id}', 'BookController@edit')->name('panel.books.edit');
     Route::post('/update/{id}', 'BookController@update')->name('panel.books.update');
     Route::get('/delete/{id}', 'BookController@delete')->name('panel.books.delete');
+  });
+
+
+  Route::prefix('borrowed')->group(function () {
+    Route::get('/status/{id}/{status}', 'BorrowController@status')->name('panel.borrowed.status');
+    Route::get('/request_book/{id}', 'BorrowController@request_book')->name('panel.borrowed.request_book');
+    Route::post('/assigned_book/{id}', 'BorrowController@assigned_book')->name('panel.borrowed.assigned_book');
   });
 
 });

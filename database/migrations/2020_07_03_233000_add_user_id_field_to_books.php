@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddTypeFieldToUsers extends Migration
+class AddUserIdFieldToBooks extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddTypeFieldToUsers extends Migration
      */
     public function up()
     {
-      Schema::table('users', function (Blueprint $table) {
-        $table->integer('type')->after('email');
+      Schema::table('books', function (Blueprint $table) {
+        $table->integer('user_id')->after('id')->nullable();
       });
     }
 
@@ -25,6 +25,8 @@ class AddTypeFieldToUsers extends Migration
      */
     public function down()
     {
-      Schema::dropIfExists('users');
+        Schema::table('books', function (Blueprint $table) {
+            //
+        });
     }
 }

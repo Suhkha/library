@@ -35,7 +35,7 @@ class CategoryController extends Controller
 
     return redirect()
       ->route('panel.categories.index')
-      ->with("success", "Category added successfully");
+      ->with("success", $category->name." added successfully");
   }
 
   public function edit($id)
@@ -61,7 +61,7 @@ class CategoryController extends Controller
 
     return redirect()
       ->route('panel.categories.index')
-      ->with("success", "Category edited successfully");
+      ->with("success", $category->name." edited successfully");
   }
 
   public function delete($id)
