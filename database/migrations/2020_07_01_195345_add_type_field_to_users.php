@@ -14,7 +14,7 @@ class AddTypeFieldToUsers extends Migration
     public function up()
     {
       Schema::table('users', function (Blueprint $table) {
-        $table->integer('type')->after('email');
+        $table->integer('type')->after('email')->nullable();
       });
     }
 
