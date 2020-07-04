@@ -19,8 +19,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth', 'prefix' => 'panel'], function () {
-  Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'admin', 'prefix' => 'panel'], function () {
 
   Route::prefix('users')->group(function () {
     Route::get('/', 'UserController@index')->name('panel.users.index');

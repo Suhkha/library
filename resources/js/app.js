@@ -5,6 +5,7 @@ const dt      = require( 'datatables.net' );
 const buttons = require( 'datatables.net-buttons' )
 const Swal    = require('sweetalert2')
 
+
 $(document).ready( function () { 
   $('#table').DataTable();
   $('#validate_form').parsley();
@@ -47,4 +48,5 @@ $(document).ready( function () {
     });
   }
 });
+
 
