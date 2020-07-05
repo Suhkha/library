@@ -21,7 +21,7 @@ class BookSeeder extends Seeder
         $book->category_id = 1;
         $book->author_id =  1;
         $book->published_date = $faker->date($format = 'Y-m-d', $max = 'now');
-        $book->status = 0;
+        $book->status = 1;
 
         $book->save();
       }
