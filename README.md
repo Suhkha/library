@@ -20,6 +20,10 @@ DB_PASSWORD=secret
 - `php artisan migrate` Create the database structure
 - `php artisan vendor:publish` Copy configuration files
 - `php artisan db:seed` Insert test data for testing
+- `npm install` To install dependencies to get a visual panel
+
+## COMMANDS TO EXECUTE SOME TESTS ##
+- `php artisan key:generate` Generate an encryption key
 
 ## Access to panel ##
 - URL: /login
