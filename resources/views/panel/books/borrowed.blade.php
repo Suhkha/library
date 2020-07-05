@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="flex items-center">
-        <div class="md:w-3/4 md:mx-auto">
+        <div class="md:w-3/4 md:mx-auto m-auto">
 
             @if (session('success'))
               <div class="text-sm border text-green-700 border-green-600 bg-green-100 px-3 py-4 mb-4" role="alert">
@@ -26,7 +26,7 @@
               <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
                 <div class="align-middle inline-block min-w-full overflow-hidden border-b border-gray-200">
 
-                  <table id="table" class="min-w-full">
+                  <table id="table" class="min-w-full display responsive table table-striped">
                     <thead>
                       <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Current user</th>
                       <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Title</th>
@@ -71,7 +71,7 @@
                           </td>
                           <td>
                             <div class="px-6 py-4">
-                              <a update-data="{{ url('panel/borrowed/status/'.$book->id.'/1') }}" class="update_record block cursor-pointer bg-green-900 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-green-800 ">Set available</a>
+                              <a update-data="{{ url('panel/borrowed/status/'.$book->id.'/1') }}" class="update_record block cursor-pointer bg-green-900 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-green-800 ">Available</a>
                               <a href="{{ url('panel/books/edit/'.$book->id.'') }}" class="block cursor-pointer bg-blue-900 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-blue-800 ">Edit</a>
                               <a delete-data="{{ url('panel/books/delete/'.$book->id.'') }}" class="block cursor-pointer bg-red-700 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-red-600 delete_record">Delete</a>
                             </div>

@@ -14,54 +14,31 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none">
-<div class="flex flex-col">
-    @if(Route::has('login'))
-        <div class="absolute top-0 right-0 mt-4 mr-4">
-            @auth
-                <a href="{{ url('/home') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Home') }}</a>
-            @else
-                <a href="{{ route('login') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase pr-6">{{ __('Login') }}</a>
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase">{{ __('Register') }}</a>
-                @endif
-            @endauth
-        </div>
-    @endif
-
-    <div class="min-h-screen flex items-center justify-center">
-        <div class="flex flex-col justify-around h-full">
-            <div>
-                <h1 class="text-gray-600 text-center font-light tracking-wider text-5xl mb-6">
-                    {{ config('app.name', 'Laravel') }}
-                </h1>
-                <ul class="list-reset">
-                    <li class="inline pr-8">
-                        <a href="https://laravel.com/docs" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Documentation">Documentation</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://laracasts.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Laracasts">Laracasts</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://laravel-news.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="News">News</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://nova.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Nova">Nova</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://forge.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Forge">Forge</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://vapor.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Vapor">Vapor</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://github.com/laravel/laravel" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="GitHub">GitHub</a>
-                    </li>
-                    <li class="inline pr-8">
-                        <a href="https://tailwindcss.com" class="no-underline hover:underline text-sm font-normal text-teal-800 uppercase" title="Tailwind Css">Tailwind CSS</a>
-                    </li>
-                </ul>
+  <nav class="bg-blue-900 shadow mb-8 py-6 px-6">
+    <div class="container mx-auto px-6 md:px-0">
+        <div class="flex items-end">
+            <div class="mr-6">
+                <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-100 no-underline">
+                  {{ config('app.name', 'Laravel') }}
+                </a>
+                <span class="text-sm text-white ml-4">Library system</span>
             </div>
         </div>
+    </div>
+</nav>
+<div class="flex flex-col">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg m-auto my-12">
+      <img class="w-full" src="https://media.giphy.com/media/EyYYkV1bqr8Mo/giphy.gif" alt="Sunset in the mountains">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">Library system</div>
+        <p class="text-gray-700 text-base">
+          This panel is for administrators only but you can register and we will notify you when access to users is ready.
+        </p>
+      </div>
+      <div class="px-6 py-4">
+        <a href="{{ route('login') }}" class="inline-block bg-blue-900 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2">Admin Login</a>
+        <a href="{{ route('register') }}" class="inline-block bg-blue-900 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2">User Register</a>
+      </div>
     </div>
 </div>
 </body>

@@ -72,10 +72,18 @@ class CategoryController extends Controller
   public function delete($id)
   {
     $category = Category::find($id);
-    $category->delete();
+    
+    if($category->categoriesRelatedToBooks()->count())
+    {
+      return redirect()
+        ->route('panel.categories.index')
+        ->with("error", "You cannot delete this category. You have related books.");
 
+    }
+    
+    $category->delete();
     return redirect()
       ->route('panel.categories.index')
-      ->with("error", "Category deleted successfully");
+      ->with("success", "Category deleted successfully");
   }
 }

@@ -121,6 +121,6 @@ class BookController extends Controller
 
     return redirect()
       ->route('panel.books.index')
-      ->with("error", "Book deleted successfully");
+      ->with("success", "Book deleted successfully");
   }
 }

@@ -71,8 +71,16 @@ class AuthorController extends Controller
     $author = Author::find($id);
     $author->delete();
 
+    if($category->authorsRelatedToBooks()->count())
+    {
+      return redirect()
+        ->route('panel.authors.index')
+        ->with("error", "You cannot delete this author. You have related books.");
+
+    }
+
     return redirect()
       ->route('panel.authors.index')
-      ->with("error", "Author deleted successfully");
+      ->with("success", "Author deleted successfully");
   }
 }

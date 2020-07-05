@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="flex items-center">
-        <div class="md:w-3/4 md:mx-auto">
+        <div class="md:w-3/4 md:mx-auto m-auto">
 
             @if (session('status'))
                 <div class="text-sm border border-t-8 rounded text-green-700 border-green-600 bg-green-100 px-3 py-4 mb-4" role="alert">
@@ -14,7 +14,7 @@
               <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
                 <div class="align-middle inline-block min-w-full overflow-hidden border-b border-gray-200">
 
-                  <table id="table" class="min-w-full">
+                  <table id="table" class="min-w-full display responsive table table-striped">
                     <thead>
                       <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Name</th>
                       <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Email</th>
@@ -46,7 +46,7 @@
                           <td>
                             <span class="px-6 py-4">
                               @if(isset($user->book))
-                                <a update-data="{{ url('panel/borrowed/status/'.$user->book->id.'/1') }}" class="update_record block cursor-pointer bg-green-900 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-green-800 ">Set available book</a>
+                                <a update-data="{{ url('panel/borrowed/status/'.$user->book->id.'/1') }}" class="update_record block cursor-pointer bg-green-900 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-green-800 ">Available book</a>
                               @else
                                 -
                               @endif

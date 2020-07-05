@@ -2,7 +2,7 @@
 
   @section('content')
       <div class="flex items-center">
-          <div class="md:w-3/4 md:mx-auto">
+          <div class="md:w-3/4 md:mx-auto m-auto">
               <div class="flex flex-col">
                 <div class="font-semibold bg-blue-900 text-white py-3 px-6 mb-8">
                   <span class="block lg:inline-block py-2 px-2">New book</span>

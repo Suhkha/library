@@ -3,11 +3,14 @@ const $ = require('jquery')
 const parsley = require('parsleyjs')
 const dt      = require( 'datatables.net' );
 const buttons = require( 'datatables.net-buttons' )
+require( 'datatables.net-responsive' );
+require( 'datatables.net-responsive-dt')
 const Swal    = require('sweetalert2')
 
-
 $(document).ready( function () { 
-  $('#table').DataTable();
+  $('#table').DataTable({
+    responsive: true
+  });
   $('#validate_form').parsley();
   $('.delete_record').on('click', onClickDeleteRecord);
   $('.update_record').on('click', onClickUpdateStatus);
