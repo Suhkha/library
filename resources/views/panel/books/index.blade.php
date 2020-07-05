@@ -66,7 +66,7 @@
                           <td>
                             <div class="px-6 py-4">
                               @if($book->status == 0)
-                                <a update-data="{{ url('panel/borrowed/status/'.$book->id.'/1') }}" class="update_record block cursor-pointer bg-green-900 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-green-800 ">Available</a>
+                                <a update-data="{{ url('panel/borrowed/status/'.$book->id.'/1') }}" class="update_record block cursor-pointer bg-green-900 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-green-800 ">Set available</a>
                               @else
                                 <a href="{{ url('panel/borrowed/request_book/'.$book->id.'') }}" class="block cursor-pointer bg-green-900 px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 text-center hover:bg-green-800 ">Get this book</a>
                               @endif
