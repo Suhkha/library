@@ -37,3 +37,5 @@
 - URL LOGIN: http://tranquil-yellowstone-23740.herokuapp.com/login
 - EMAIL: admin@maniak.co
 - PASSWORD: iwantmybook
+
+If you have any questions, you can send me an email: `erandivilla92@gmail.com`
