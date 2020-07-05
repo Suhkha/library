@@ -13,7 +13,6 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-      DB::table('categories')->truncate();
       $faker = Faker::create();
       for ($i=0; $i < 5; $i++) 
       {
