@@ -10,8 +10,7 @@ class RouteAuthorTest extends TestCase
 {
   public function testRouteAuthor()
     {
-        $response = $this->get('/panel/authors');
-
-        $response->assertStatus(200);
+      $response = $this->get('/panel/authors');
+      $response->assertStatus(200);
     }
 }
