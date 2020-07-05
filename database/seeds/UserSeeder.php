@@ -13,6 +13,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+      DB::table('users')->truncate();
       $faker = Faker::create();
       
       for ($i=0; $i < 5; $i++) 
@@ -20,7 +21,7 @@ class UserSeeder extends Seeder
         $user = new User();
         $user->name = $faker->name;
         $user->email = $faker->safeEmail;
-        $user->type = $faker->numberBetween($min = 0);
+        $user->type = 0;
         $user->password = crypt("iwantmybook", "");
 
         $user->save();

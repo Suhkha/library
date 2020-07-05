@@ -13,6 +13,7 @@ class BookSeeder extends Seeder
      */
     public function run()
     {
+      DB::table('book')->truncate();
       $faker = Faker::create();
       for ($i=0; $i < 5; $i++) 
       {

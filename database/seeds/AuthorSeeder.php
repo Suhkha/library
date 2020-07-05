@@ -13,6 +13,7 @@ class AuthorSeeder extends Seeder
      */
     public function run()
     {
+      DB::table('authors')->truncate();
       $faker = Faker::create();
       for ($i=0; $i < 5; $i++) 
       {
